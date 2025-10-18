@@ -76,12 +76,12 @@
             // output = Success: This is promise solved successfully
 
         /* 
-            # catch()
+            # catch() method
             -> The catch() method is called when a promise is rejected (fails).
             -> It takes a single argument: a callback function that handles the error.
         */
 
-        const isAdmin = false;
+        const isAdmin = true;
         const myPro2 = () =>{
             return new Promise((res, rej) => {
                 setTimeout( () =>{
@@ -94,10 +94,24 @@
                 }, 2 * 2000  );
             });                 
         };
+        
 
         myPro2().then( (res) => {console.log("Success: ",res)} )
                 .catch((error) => {console.log("Error: ",error)});
+        // output : Success:  User is admin
 
+        /* 
+            # finally() method
+            => finally() method is called when a promise is resolved or rejected
+            => It takes a single argument: a callback function that executes when 
+               the promise completes.
+        */
+        myPro2().then((res) => {console.log('success:' , res)})
+                .catch((err) =>  console.log('Error: ',err))
+                .finally(() => {console.log('It is done')});
+
+        // output : Success:  User is admin , It is done
+        
     </script>
 </body>
 </html>
