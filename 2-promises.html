@@ -23,11 +23,13 @@
 
         let status = true;
         const myPromise = new Promise((resolve, reject)=>{
-            if(status){
-                resolve('I have complited Promise');
-            }else{
-                reject('I am not complited Promise');
-            }
+            setTimeout(()=>{
+                if(status){
+                    resolve('I have complited Promise');
+                }else{
+                    reject('I am not complited Promise');
+                }
+            }, 5 * 2000);            
         });
 
     </script>
