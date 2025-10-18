@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener() method</title>
+</head>
+<body>
+
+    <h2>addEventListener() method</h2>
+    <br><br>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+        function viewData(){
+            alert("Hi, EventListener");
+        }
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', viewData);
+        
+    </script>
+    
+</body>
+</html>
