@@ -111,7 +111,25 @@
                 .finally(() => {console.log('It is done')});
 
         // output : Success:  User is admin , It is done
-        
+
+        // promise object with method chaining 
+        const isNum = true ;
+        const myPro3 = () => {
+            return new Promise((res,rej ) => {
+                setTimeout(() => {
+                    if(isNum){
+                        res('success: ');
+                    }else{
+                        rej('error: ');
+                    }          
+                },2 * 3000);
+            });
+        };
+
+        // promise object with method chaining
+        myPro3().then((suc) => {console.log(suc, "This is a number!!")})
+                .catch((err) => {console.log(err, 'This is not a number..')})
+                .finally(() => {console.log('Finished functions')});
     </script>
 </body>
 </html>
