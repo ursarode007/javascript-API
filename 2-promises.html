@@ -12,8 +12,7 @@
         /* 
             # promise() 
             => A promise is object that returns a values which you hope to recieve in the future, but not now.
-            => Because the value will be returned by the promise in the future, the promise is very well-suited
-               for hadling asynchronous operations.
+            => Because the value will be returned by the promise in the future, the promise is very well-suited for hadling asynchronous operations.
             
             # Promise has three states:
             1. Pending: initial state, neither fulfilled nor rejected.
@@ -21,7 +20,7 @@
             3. Rejected: meaning that the operation failed.
         */
 
-        let status = true;
+        let status = false;
         const myPromise = new Promise((resolve, reject)=>{
             setTimeout(()=>{
                 if(status){
@@ -31,7 +30,50 @@
                 }
             }, 5 * 2000);            
         });
+        // O/P - Promise {<rejected>: 'I am not complited Promise'}
 
+        /* 
+            # Promises are used to handle asynchonous oprations.
+            # The then(), catch() and finally() methods are used to consume a promise and handle
+              its eventual outcome.
+            
+            # then():
+            -> then() method is callad when a promise is successfully resolved (fullfiled).
+            -> It takes up to two arguments: a callback function for success (onFulfilled) 
+               and an optional callback function for failure (onRejected).
+            -> The onFulfilled callback receives the resolved value of the promise as an argument.
+        */
+
+        // use arrow function for promise
+        let active = true;
+        const myPro = () => {
+            return new Promise((res, rej) => { // res = resolve , rej = reject
+                /* 
+                    setTimeout() function schedules another function to be executed after a 4-second delay (2 * 2000 milliseconds).
+                */
+                setTimeout(() => { 
+                    if(active){
+                        res('This is promise solved successfully ');
+                    }else{
+                        rej('The promise is not complited ');
+                    }
+                }, 2 * 2000);
+            });
+        };
+        myPro().then( 
+                /* 
+                    # then() method takes two (2) function as arguments.
+
+                    -> The first function, (res) => {console.log('Success:', res)}, is the "fulfillment     
+                       handler." It will run if the promise is resolved.
+                    -> The second function, (rej) => {console.log('Failed:', rej)}, is the "rejection 
+                       handler." It will run if the promise is rejected.
+                */
+                    (res)=>{console.log('Success:',res)}, 
+                    (rej) => {console.log('Failed:', rej)}
+                ); 
+                
+            // output = Success: This is promise solved successfully
     </script>
 </body>
 </html>
