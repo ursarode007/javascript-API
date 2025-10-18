@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Promises</title>
+</head>
+<body>
+    <h1>2. Promises() method</h1>
+
+    <script>
+        /* 
+            # promise() 
+            => A promise is object that returns a values which you hope to recieve in the future, but not now.
+            => Because the value will be returned by the promise in the future, the promise is very well-suited
+               for hadling asynchronous operations.
+            
+            # Promise has three states:
+            1. Pending: initial state, neither fulfilled nor rejected.
+            2. Fulfilled: meaning that the operation was completed successfully.
+            3. Rejected: meaning that the operation failed.
+        */
+
+        let status = true;
+        const myPromise = new Promise((resolve, reject)=>{
+            if(status){
+                resolve('I have complited Promise');
+            }else{
+                reject('I am not complited Promise');
+            }
+        });
+
+    </script>
+</body>
+</html>
