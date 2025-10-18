@@ -13,11 +13,14 @@
     <button id="btn">Click Me</button>
 
     <script>
-        function viewData(){
+        /* function viewData(){
             alert("Hi, EventListener");
-        }
+        } */
         const btn = document.querySelector('#btn');
-        btn.addEventListener('click', viewData);
+        //btn.addEventListener('click', viewData);
+        btn.addEventListener('click', () => {
+            alert('Hi, EventListener using arrow function');
+        });
         
     </script>
     
