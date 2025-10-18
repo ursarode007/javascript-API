@@ -2,4 +2,4 @@
 
 1. AddEventListener method
 
-2. promises()
+2. Promise obje with mini project
