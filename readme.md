@@ -2,4 +2,4 @@
 
 1. AddEventListener method
 
-2. Promise obje with mini project
+2. Promise object with mini project
